@@ -10,7 +10,7 @@ export default function NavbarComponent() {
   const menuItems = ["Home", "Projects", "About"];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-background" >
+    <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-transparent  fixed  " >
       <NavbarContent>
         <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} className="sm:hidden text-foreground" />
         {/* <NavbarBrand >

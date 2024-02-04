@@ -22,14 +22,14 @@ export default function RootLayout({
 
 
   return (
-    <html lang="en" className='dark '>
+    <html lang="en" className='bg-background'>
         <body className={`${inter.className} `}>
           <Providers>
             <header className='w-full'>
               <NavbarComponent/>
             </header>
 
-            <main >
+            <main className='pt-12 bg-background'>
                 {children}
             </main>
 
