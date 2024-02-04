@@ -13,7 +13,6 @@ import SqlServerLogo from '/public/sqlServer.svg'
 import FianceAndIImage from "/public/fiance-and-i.jpg"
 
 import { useScroll, useTransform, motion } from "framer-motion"
-import FianceAndI from "./fianceAndI"
 
 export default function ZoomParallax() {
 
@@ -45,8 +44,8 @@ export default function ZoomParallax() {
             alt: "typescript logo",
             top: "top-[-25vh]",
             left: "left-[20vw]",
-            width: 150,
-            height: 150
+            width: 100,
+            height: 100
         },
         {
             src: DotnetImage.src,
@@ -54,8 +53,8 @@ export default function ZoomParallax() {
             alt: "dotnet logo",
             top: "top-[5vh]",
             left: "left-[30vw]",
-            width: 150,
-            height: 150
+            width: 100,
+            height: 100
         },
         {
             src: HTMLLogo.src,
@@ -63,8 +62,8 @@ export default function ZoomParallax() {
             alt: "HTML logo",
             top: "top-[25vh]",
             left: "left-[15vw]",
-            width: 150,
-            height: 150
+            width: 100,
+            height: 100
         },
         {
             src: TailwindLogo.src,
@@ -72,8 +71,8 @@ export default function ZoomParallax() {
             alt: "Tailwind logo",
             top: "top-[-20vh]",
             left: "left-[-20vw]",
-            width: 150,
-            height: 150
+            width: 100,
+            height: 100
         },
         {
             src: CssLogo.src,
@@ -81,8 +80,8 @@ export default function ZoomParallax() {
             alt: "CSS logo",
             top: "top-[28vh]",
             left: "left-[-15vw]",
-            width: 150,
-            height: 150
+            width: 100,
+            height: 100
         },
         {
             src: CSharpLogo.src,
@@ -90,8 +89,8 @@ export default function ZoomParallax() {
             alt: "C# logo",
             top: "top-[5vh]",
             left: "left-[-30vw]",
-            width: 150,
-            height: 150
+            width: 100,
+            height: 100
         },
         {
             src: SqlServerLogo.src,
@@ -99,20 +98,15 @@ export default function ZoomParallax() {
             alt: "SQL Server logo",
             top: "top-[-35vh]",
             left: "left-[-5vw]",
-            width: 150,
-            height: 150
+            width: 100,
+            height: 100
         }
     ]
 
     return (
         <div ref={container} className={`h-[300vh] relative `}>
             <div className={`sticky top-0 h-[100vh] bg-background overflow-hidden`}>
-                {/* <motion.div style={{ scale: scale4 }}  className={`w-full h-full absolute top-0 flex justify-center items-center`}>
-                    <div className={`w-[25vw] h-[25vw] relative flex justify-center items-center`}>
-
-                        <FianceAndI />
-                    </div>
-                </motion.div> */}
+                
                 {
                     pictures.map(({ src, scale, alt, top, left, width, height }, index) => {
                         return (
