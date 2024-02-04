@@ -10,6 +10,8 @@ import TailwindLogo from '/public/tailwind.svg'
 import CssLogo from '/public/css.svg'
 import CSharpLogo from '/public/csharp.svg'
 import SqlServerLogo from '/public/sqlServer.svg'
+import FianceAndIImage from "/public/fiance-and-i.jpg"
+
 import { useScroll, useTransform, motion } from "framer-motion"
 import FianceAndI from "./fianceAndI"
 
@@ -29,79 +31,100 @@ export default function ZoomParallax() {
 
     const pictures = [
         {
+            src: FianceAndIImage.src,
+            scale: scale4,
+            alt: "my fiance and I",
+            top: null,
+            left: null,
+            width: 300,
+            height: 300
+        },
+        {
             src: TSLogo.src,
             scale: scale6,
             alt: "typescript logo",
             top: "top-[-25vh]",
-            left: "left-[25vh]",
+            left: "left-[20vw]",
+            width: 150,
+            height: 150
         },
         {
             src: DotnetImage.src,
             scale: scale5,
             alt: "dotnet logo",
             top: "top-[5vh]",
-            left: "left-[40vh]",
+            left: "left-[30vw]",
+            width: 150,
+            height: 150
         },
         {
             src: HTMLLogo.src,
             scale: scale8,
             alt: "HTML logo",
             top: "top-[25vh]",
-            left: "left-[15vh]",
+            left: "left-[15vw]",
+            width: 150,
+            height: 150
         },
         {
             src: TailwindLogo.src,
             scale: scale9,
             alt: "Tailwind logo",
             top: "top-[-20vh]",
-            left: "left-[-30vh]",
+            left: "left-[-20vw]",
+            width: 150,
+            height: 150
         },
         {
             src: CssLogo.src,
             scale: scale8,
             alt: "CSS logo",
             top: "top-[28vh]",
-            left: "left-[-20vh]",
+            left: "left-[-15vw]",
+            width: 150,
+            height: 150
         },
         {
             src: CSharpLogo.src,
             scale: scale5,
             alt: "C# logo",
             top: "top-[5vh]",
-            left: "left-[-40vh]",
+            left: "left-[-30vw]",
+            width: 150,
+            height: 150
         },
         {
             src: SqlServerLogo.src,
             scale: scale6,
             alt: "SQL Server logo",
             top: "top-[-35vh]",
-            left: "left-[-5vh]",
+            left: "left-[-5vw]",
+            width: 150,
+            height: 150
         }
     ]
 
     return (
         <div ref={container} className={`h-[300vh] relative `}>
             <div className={`sticky top-0 h-[100vh] bg-background overflow-hidden`}>
-                <motion.div style={{ scale: scale4 }}  className={`w-full h-full absolute top-0 flex justify-center items-center`}>
+                {/* <motion.div style={{ scale: scale4 }}  className={`w-full h-full absolute top-0 flex justify-center items-center`}>
                     <div className={`w-[25vw] h-[25vw] relative flex justify-center items-center`}>
 
                         <FianceAndI />
                     </div>
-                </motion.div>
+                </motion.div> */}
                 {
-                    pictures.map(({ src, scale, alt, top, left }, index) => {
+                    pictures.map(({ src, scale, alt, top, left, width, height }, index) => {
                         return (
                             <motion.div key={index} style={{ scale: scale }} className={`w-full h-full absolute  flex justify-center items-center`}>
-                                <div className={`w-[25vw] h-[25vw] relative flex justify-center items-center ${top} ${left}`}>
+                                <div className={`w-[25vw] h-[25vw] relative flex justify-center items-center ${top} ${left} `}>
                                     <Image
-                                        as={NextImage}
                                         src={src}
                                         alt={alt}
-                                        width={150}
-                                        height={150}
+                                        width={width}
+                                        height={height}
                                         placeholder="blur"
                                         className="fill-foreground stroke-foreground "
-                                        blurDataURL={src}
                                         isBlurred
                                     />
                                 </div>
