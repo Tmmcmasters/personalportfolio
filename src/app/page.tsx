@@ -16,8 +16,8 @@ export default function Home() {
       <div className="w-full h-full">
         <ZoomParallax />
       </div>
-      <div className="w-28 h-28">
-
+      <div className="w-full h-[100vh] bg-primary-200">
+          
       </div>
 
     </div>

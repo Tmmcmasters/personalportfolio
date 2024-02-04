@@ -44,8 +44,8 @@ export default function ZoomParallax() {
             alt: "typescript logo",
             top: "top-[-25vh]",
             left: "left-[20vw]",
-            width: 100,
-            height: 100
+            width: 150,
+            height: 150
         },
         {
             src: DotnetImage.src,
