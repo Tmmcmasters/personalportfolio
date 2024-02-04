@@ -4,6 +4,7 @@ import React from 'react'
 import './globals.css'
 import { Providers } from './providers'
 import NavbarComponent  from '@/app/(components)/navbar'
+import { ScrollShadow } from '@nextui-org/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,15 +22,15 @@ export default function RootLayout({
 
 
   return (
-    <html lang="en" className='dark'>
-        <body className={inter.className}>
+    <html lang="en" className='dark '>
+        <body className={`${inter.className} `}>
           <Providers>
             <header className='w-full'>
               <NavbarComponent/>
             </header>
 
-            <main>
-            {children}
+            <main >
+                {children}
             </main>
 
             <footer>

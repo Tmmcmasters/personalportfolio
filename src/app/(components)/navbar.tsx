@@ -10,9 +10,9 @@ export default function NavbarComponent() {
   const menuItems = ["Home", "Projects", "About"];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} >
+    <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-background" >
       <NavbarContent>
-        <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} className="sm:hidden" />
+        <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} className="sm:hidden text-foreground" />
         {/* <NavbarBrand >
           <p className="font-bold text-inherity text-xl text-foreground">Timothy McMasters</p>
         </NavbarBrand> */}
