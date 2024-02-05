@@ -10,7 +10,7 @@ export default function NavbarComponent() {
   const menuItems = ["Home", "Projects", "About"];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-transparent  fixed  " >
+    <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-transparent text-primary  fixed  " >
       <NavbarContent>
         <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} className="sm:hidden text-foreground" />
         {/* <NavbarBrand >
@@ -25,7 +25,7 @@ export default function NavbarComponent() {
 
       <NavbarContent className="flex gap-5" justify="center">
         <NavbarItem isActive className="hidden sm:flex">
-          <Link color="foreground" href="#"  size="lg">
+          <Link color="primary" href="#"  size="lg">
             Contact
           </Link>
         </NavbarItem>
