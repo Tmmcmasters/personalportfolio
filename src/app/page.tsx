@@ -5,21 +5,22 @@ import { Card, CardBody, CardFooter, CardHeader, Divider } from "@nextui-org/rea
 import ZoomParallax from "./(components)/ZoomParallax/zoomparallax";
 import Lenis from "@studio-freight/lenis/types";
 import HeroSection from "./(components)/heroSection";
+import HorizontalSection from "./(components)/HorizontalScroll/horizontalScroll";
 
 export default function Home() {
 
 
 
   return (
-    <div className=" flex flex-col justify-center items-center bg-background ">
+    <div className=" flex flex-col justify-center items-center bg-background  overflow-x-clip">
       <HeroSection />
       <div className="w-full h-full">
         <ZoomParallax />
       </div>
-      <div className="w-full h-[100vh] bg-primary-200">
-          
-      </div>
+      <HorizontalSection />
+      <div className="w-full h-[50vh] bg-green-400">
 
+      </div>
     </div>
   );
 }
