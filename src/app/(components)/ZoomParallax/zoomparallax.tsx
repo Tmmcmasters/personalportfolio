@@ -12,7 +12,7 @@ import CSharpLogo from '/public/csharp.svg'
 import SqlServerLogo from '/public/sqlServer.svg'
 import BoostrapLogo from '/public/bootstrap-logo.svg'
 import QwikLogo from 'public/qwik-logo.svg'
-import NextLogo from 'public/Nextjs-logo.png'
+import NextLogo from 'public/next.svg'
 import FianceAndIImage from "/public/fiance-and-i.jpg"
 
 import { useScroll, useTransform, motion } from "framer-motion"
@@ -129,7 +129,7 @@ export default function ZoomParallax() {
             top: "top-[-28vh]",
             left: "left-[45rem]",
             width: 180,
-            height: 180
+            height: 180,
         }
     ]
 
