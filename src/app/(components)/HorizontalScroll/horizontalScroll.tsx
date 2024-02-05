@@ -46,7 +46,7 @@ export default function HorizontalSection() {
                     style={{
                         transform: isInView ? "translateY(0)" : "translateY(30%)",
                         opacity: isInView ? 1 : 0,
-                        transition: 'all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s'
+                        transition: 'all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) '
                     }}
                     className="flex justify-center items-center "
                 >
@@ -139,7 +139,7 @@ export default function HorizontalSection() {
                     style={{
                         transform: isInView2 ? "translateY(0)" : "translateY(30%)",
                         opacity: isInView2 ? 1 : 0,
-                        transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s'
+                        transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1)'
                     }}
                     className="flex justify-center items-center "
                 >
