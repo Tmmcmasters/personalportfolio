@@ -131,7 +131,7 @@ export default function Home() {
   ]
 
   return (
-    <div className=" flex flex-col justify-center items-center bg-background  overflow-x-clip">
+    <div className=" flex flex-col justify-center items-center bg-background  overflow-x-clip " id="home">
       <HeroSection />
       <div className="w-full h-full">
         <ZoomParallax />
