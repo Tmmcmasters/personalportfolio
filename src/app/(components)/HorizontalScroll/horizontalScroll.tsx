@@ -69,7 +69,7 @@ export default function HorizontalSection() {
                                             alt="Star Bank Logo"
                                             removeWrapper
                                             isBlurred
-                                            className="border-1 border-background p-2 border-opacity-0 hover:border-opacity-100 
+                                            className="border-1 border-foreground p-2 border-opacity-0 hover:border-opacity-100 
                                 !transition-all !duration-250
                                 "
                                         />
