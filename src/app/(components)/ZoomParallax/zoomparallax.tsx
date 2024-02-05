@@ -10,6 +10,9 @@ import TailwindLogo from '/public/tailwind.svg'
 import CssLogo from '/public/css.svg'
 import CSharpLogo from '/public/csharp.svg'
 import SqlServerLogo from '/public/sqlServer.svg'
+import BoostrapLogo from '/public/bootstrap-logo.svg'
+import QwikLogo from 'public/qwik-logo.svg'
+import NextLogo from 'public/Nextjs-logo.png'
 import FianceAndIImage from "/public/fiance-and-i.jpg"
 
 import { useScroll, useTransform, motion } from "framer-motion"
@@ -79,7 +82,7 @@ export default function ZoomParallax() {
             scale: scale8,
             alt: "CSS logo",
             top: "top-[28vh]",
-            left: "left-[-15vw]",
+            left: "left-[-18vw]",
             width: 100,
             height: 100
         },
@@ -100,6 +103,33 @@ export default function ZoomParallax() {
             left: "left-[-5vw]",
             width: 100,
             height: 100
+        },
+        {
+            src: BoostrapLogo.src,
+            scale: scale9,
+            alt: "Boostrap logo",
+            top: "top-[25vh]",
+            left: "left-[40rem]",
+            width: 100,
+            height: 100
+        },
+        {
+            src: QwikLogo.src,
+            scale: scale9,
+            alt: "Qwik logo",
+            top: "top-[-28vh]",
+            left: "left-[-40rem]",
+            width: 100,
+            height: 100
+        },
+        {
+            src: NextLogo.src,
+            scale: scale9,
+            alt: "Next.js logo",
+            top: "top-[-28vh]",
+            left: "left-[45rem]",
+            width: 180,
+            height: 180
         }
     ]
 
@@ -111,7 +141,7 @@ export default function ZoomParallax() {
                     pictures.map(({ src, scale, alt, top, left, width, height }, index) => {
                         return (
                             <motion.div key={index} style={{ scale: scale }} className={`w-full h-full absolute  flex justify-center items-center`}>
-                                <div className={`w-[25vw] h-[25vw] relative flex justify-center items-center ${top} ${left} `}>
+                                <div className={` relative flex justify-center items-center ${top} ${left} w-[25vw] h-[25vw]`}>
                                     <Image
                                         src={src}
                                         alt={alt}
