@@ -138,7 +138,7 @@ export default function Home() {
       </div>
       <HorizontalSection />
       <div className="w-full h-full">
-        <div ref={container} className="h-[500vh] relative " id="contact">
+        <div ref={container} className="h-[500vh] relative " >
           <div className="sticky top-0 h-[100vh] bg-background overflow-hidden flex justify-center items-center ">
             {
               color.map((item, index) => (
@@ -162,7 +162,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="h-[100vh] w-full bg-black">
+      <div className="h-[100vh] w-full bg-black" id="contact">
 
       </div>
     </div>
