@@ -5,7 +5,7 @@ import { useRef } from "react"
 export default function HeroSection() {
 
     const loadIn = useRef(null)
-    const isInView = useInView(loadIn, { once: true })
+    const isInView = useInView(loadIn, { once: false })
     
     
 
