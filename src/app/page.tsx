@@ -25,11 +25,14 @@ export default function Home() {
   const scale3 = useTransform(scrollYProgress, [0, 1], [1, 20])
   const scale4 = useTransform(scrollYProgress, [0, 1], [1, 25])
   const scale5 = useTransform(scrollYProgress, [0, 1], [1, 30])
+  const scaleBlack = useTransform(scrollYProgress, [.8, 1], [0, 45])
+  const scaleDarkGrey = useTransform(scrollYProgress, [.7, 1], [0, 50])
   
-  const scaleTwo1 = useTransform(scrollYProgress, [0, 1], [1, 30])
-  const scaleTwo2 = useTransform(scrollYProgress, [0, 1], [1, 35])
-  const scaleTwo3 = useTransform(scrollYProgress, [0, 1], [1, 40])
-  const scaleTwo4 = useTransform(scrollYProgress, [0, 1], [1, 45])
+  const scaleTwo = useTransform(scrollYProgress, [.1, 1], [1, 25])
+  const scaleTwo1 = useTransform(scrollYProgress, [.2, 1], [1, 30])
+  const scaleTwo2 = useTransform(scrollYProgress, [.3, 1], [1, 35])
+  const scaleTwo3 = useTransform(scrollYProgress, [.4, 1], [1, 40])
+  const scaleTwo4 = useTransform(scrollYProgress, [.5, 1], [1, 45])
   const opacityScale = useTransform(scrollYProgress, [0, 1], [0, 1])
   
 
@@ -109,14 +112,21 @@ export default function Home() {
       shadowColor: 'shadow-purple-500',
       width: 'w-[5vw]',
       height: 'h-[5vw]',
-      scale: scaleTwo2
+      scale: scaleTwo
+    },
+    {
+      color: 'bg-gray-950',
+      shadowColor: 'shadow-black/50',
+      width: 'w-[5vw]',
+      height: 'h-[5vw]',
+      scale: scaleDarkGrey
     },
     {
       color: 'bg-black',
       shadowColor: 'shadow-black/50',
       width: 'w-[5vw]',
       height: 'h-[5vw]',
-      scale: scale4
+      scale: scaleBlack
     }
   ]
 
@@ -129,20 +139,20 @@ export default function Home() {
       <HorizontalSection />
       <div className="w-full h-full">
         <div ref={container} className="h-[500vh] relative " id="contact">
-          <div className="sticky top-0 h-[100vh] bg-black overflow-hidden flex justify-center items-center">
+          <div className="sticky top-0 h-[100vh] bg-background overflow-hidden flex justify-center items-center ">
             {
               color.map((item, index) => (
                 <motion.div 
                 ref={loadIn}
 
-              className={`${item.color} ${item.width} ${item.height} absolute flex  shadow-sm
+              className={`${item.color} ${item.width} ${item.height} absolute flex  shadow-sm rounded-full
               ${item.shadowColor}
               `}
               key={index}
               style={{
                 scale: item.scale,
                 opacity: isInView ? opacityScale : 0,
-                transition: 'opacity .5s cubic-bezier(0.17, 0.55, 0.55, 1), '
+                transition: 'opacity .2s cubic-bezier(0.17, 0.55, 0.55, 1), '
               }}
             >
             </motion.div>
@@ -151,6 +161,9 @@ export default function Home() {
             
           </div>
         </div>
+      </div>
+      <div className="h-[100vh] w-full bg-black">
+
       </div>
     </div>
   );
