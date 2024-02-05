@@ -1,7 +1,7 @@
 'use client'
 
 import { Badge, Button, Card, CardBody, CardFooter, CardHeader, Image, Link, Tooltip } from "@nextui-org/react"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useAnimation, useInView, useScroll, useTransform } from "framer-motion"
 import StarBankLogo from '/public/star-financial-bank.svg'
 import CSharpLogo from '/public/csharp.svg'
 import DotnetImage from "/public/dotnet-logo.svg"
@@ -16,13 +16,16 @@ import DaisyUILogo from '/public/daisyui.svg'
 
 
 
-import React from "react"
+import React, { useEffect, useRef } from "react"
 
 export default function HorizontalSection() {
     const container = React.useRef(null)
     const { scrollYProgress } = useScroll({
         target: container,
     })
+
+    const loadIn = useRef(null)
+    const isInView = useInView(loadIn, { once: true })
 
     const transformX = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"])
 
@@ -34,7 +37,14 @@ export default function HorizontalSection() {
                 
             ">
 
-
+            <motion.div 
+                ref={loadIn }
+                style={{
+                    transform: isInView ? "translateY(0)" : "translateY(30%)",
+                    opacity: isInView ? 1 : 0,
+                    transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s'
+                }}
+                >
                 <Card className="w-96 bg-white bg-opacity-5 border-1 border-white text-white min-h-[60vh]"  >
                     <CardHeader className="flex flex-row justify-between items-center">
                         <div className="flex flex-col">
@@ -104,7 +114,15 @@ export default function HorizontalSection() {
                         />
                     </CardFooter>
                 </Card>
-
+                </motion.div>
+                <motion.div 
+                ref={loadIn }
+                style={{
+                    transform: isInView ? "translateY(0)" : "translateY(30%)",
+                    opacity: isInView ? 1 : 0,
+                    transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s'
+                }}
+                >
                 <Badge content="In Progress" color="warning" variant="solid" className="border-0 -translate-y-9">
                     <Card className="w-96 bg-secondary bg-opacity-5 border-1 border-secondary text-secondary-foreground min-h-[60vh]">
                         <CardHeader className="flex flex-row justify-between items-center ">
@@ -171,6 +189,7 @@ export default function HorizontalSection() {
                         </CardFooter>
                     </Card>
                 </Badge>
+                </motion.div>
 
 
 
