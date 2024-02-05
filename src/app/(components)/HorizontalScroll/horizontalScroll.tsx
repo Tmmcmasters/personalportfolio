@@ -27,7 +27,9 @@ export default function HorizontalSection() {
     })
 
     const loadIn = useRef(null)
-    const isInView = useInView(loadIn, { once: true })
+    const isInView = useInView(loadIn, { once: false })
+    const loadIn2 = useRef(null)
+    const isInView2 = useInView(loadIn2, { once: false })
 
     const transformX = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"])
 
@@ -35,7 +37,7 @@ export default function HorizontalSection() {
         <div ref={container} className="w-full h-[400vh]  relative ">
             <motion.div
                 style={{ x: transformX }}
-                className="w-[400vh] h-[100vh]   sticky top-0 bg-foreground  flex flex-row justify-start pl-[25vw] items-center gap-80
+                className="w-[400vh] h-[100vh]   sticky top-0 bg-background  flex flex-row justify-start pl-[25vw] items-center gap-80
                 
             ">
 
@@ -44,10 +46,10 @@ export default function HorizontalSection() {
                 style={{
                     transform: isInView ? "translateY(0)" : "translateY(30%)",
                     opacity: isInView ? 1 : 0,
-                    transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s'
+                    transition: 'all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s'
                 }}
                 >
-                <Card className="w-[90vw]  max-w-md bg-white bg-opacity-5 border-1 border-white text-background min-h-[60vh]"  >
+                <Card className="w-[90vw]  max-w-md bg-white bg-opacity-5  text-foreground min-h-[60vh]"  >
                     <CardHeader className="flex flex-row justify-between items-center">
                         <div className="flex flex-col">
                             <h1 className="text-3xl">STAR Bank</h1>
@@ -124,18 +126,19 @@ export default function HorizontalSection() {
                     </CardFooter>
                 </Card>
                 </motion.div>
+
                 <motion.div 
-                ref={loadIn }
+                ref={loadIn2 }
                 style={{
-                    transform: isInView ? "translateY(0)" : "translateY(30%)",
-                    opacity: isInView ? 1 : 0,
-                    transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s'
+                    transform: isInView2 ? "translateY(0)" : "translateY(30%)",
+                    opacity: isInView2 ? 1 : 0,
+                    transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s'
                 }}
                 >
                 <Badge content="In Progress" color="warning" variant="solid" className="border-0 -translate-y-9">
-                    <Card className="w-[90vw]  max-w-md bg-secondary bg-opacity-5 border-1 border-secondary text-background min-h-[60vh]">
+                    <Card className="w-[90vw]  max-w-md bg-secondary bg-opacity-10  text-foreground min-h-[60vh]">
                         <CardHeader className="flex flex-row justify-between items-center ">
-                            <h1 className="text-3xl  bg-gradient-to-r from-purple-500   to-[#FE9A03]  text-transparent bg-clip-text font-bold">qwikdaisy</h1>
+                            <h1 className="text-3xl  bg-gradient-to-r from-purple-500   to-[#FE9A03]  text-transparent bg-clip-text font-bold drop-shadow-lg">qwikdaisy</h1>
                             <Tooltip content="Go to the Github" className="text-foreground sticky">
                                 <Button isIconOnly className="!bg-white !border-0"    as={Link} href="https://github.com/Tmmcmasters/DaisyQwik" target="_blank" aria-label="Github">
                                     <Image
