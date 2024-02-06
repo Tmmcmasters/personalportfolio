@@ -229,7 +229,7 @@ export default function ContactMe() {
                         </div>
                         <Textarea label="Message" type="text" variant="bordered" description="I do not share any of your information with anyone. For privacy reasons, I do not share my personal information on this site. Please feel to reach out to me through here or through other means like LinkedIn." onValueChange={(e) => setFormData({ ...formData, message: e })} />
                         <div className="w-full mt-5 ">
-                            <Button className="w-full" disabled={submitDisabled} isLoading={SubmitLoading} variant="solid" size="lg" color="default" onClick={handleSubmit}  onPressEnd={handleSubmit}>Submit</Button>
+                            <Button className="w-full" disabled={submitDisabled} isLoading={SubmitLoading} variant="solid" size="lg" color="default"   onPressEnd={handleSubmit}>Submit</Button>
                         </div>
                     </CardBody>
                 </Card>
