@@ -91,14 +91,14 @@ export default function ContactMe() {
         result.then((data) => {
             toast.success("Successfully sent message! \n Thank you! \n I will get back to you as soon as possible")
             setSubmitLoading(false)
-            // setFormData({
-            //     email: "",
-            //     firstName: "",
-            //     lastName: "",
-            //     company: "",
-            //     phoneNumber: "",
-            //     message: "",
-            // })
+            setFormData({
+                email: "",
+                firstName: "",
+                lastName: "",
+                company: "",
+                phoneNumber: "",
+                message: "",
+            })
             setSubmitDisabled(true)
             return
         })
