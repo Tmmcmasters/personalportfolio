@@ -5,6 +5,7 @@ import './globals.css'
 import { Providers } from './providers'
 import NavbarComponent  from '@/app/(components)/navbar'
 import { ScrollShadow } from '@nextui-org/react'
+import FooterSection from './(components)/footerSection'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -37,6 +38,7 @@ export default function RootLayout({
             </main>
 
             <footer>
+              <FooterSection/>
             </footer>
         </Providers>
         </body>

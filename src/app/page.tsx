@@ -23,7 +23,7 @@ export default function Home() {
       <div className="w-full h-full">
         <ColorParallax />
       </div>
-      <div className="h-[100vh] w-full bg-black" id="contact">
+      <div className="h-[100vh] w-full bg-black " id="contact">
         <ContactMe />
       </div>
     </div>
