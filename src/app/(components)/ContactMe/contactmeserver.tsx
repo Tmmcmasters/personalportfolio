@@ -16,21 +16,25 @@ export async function CreateContact({
     phoneNumber: string | undefined | null
     message: string | undefined | null
 }) {
-
-    const supabase = await createSupabaseServerCleint();
-
-    const { data, error } = await supabase
-        .from('ContactMe')
-        .insert([
-            {
-                Email: email,
-                FirstName: firstName,
-                LastName: lastName,
-                Company: company,
-                PhoneNumber: phoneNumber,
-                Message: message
-            }
-        ])
-    
-    return { data, error }
+    return new Promise (async (resolve, reject) => {
+        const supabase = await createSupabaseServerCleint();
+        const { data, error } = await supabase
+            .from('ContactMe')
+            .insert([
+                {
+                    Email: email,
+                    FirstName: firstName,
+                    LastName: lastName,
+                    Company: company,
+                    PhoneNumber: phoneNumber,
+                    Message: message
+                }
+            ])
+        
+        if (error) {
+            reject(error)
+        } else {
+            resolve(data)
+        }
+    })
 }
