@@ -1,11 +1,12 @@
 "use client"
 
-import { Button, Card, CardBody, CardHeader, Input, Textarea } from "@nextui-org/react"
+import { Button, Card, CardBody, CardHeader, Image, Input, Link, Textarea, Tooltip } from "@nextui-org/react"
 import { useRef, useState } from "react"
 import { CreateContact } from "./contactmeserver"
 import toast from "react-hot-toast"
 import { motion } from "framer-motion";
-
+import GithubLogo from '/public/github-mark.svg'
+import LinkedInLogo from '/public/LI-In-Bug.png'
 
 export default function ContactMe() {
 
@@ -165,13 +166,37 @@ export default function ContactMe() {
                         transformStyle: "preserve-3d",
                     }
                 } 
-                className="h-fit w-[90vw] max-w-[500px] bg-black border-1 border-foreground shadow-2xl shadow-foreground-500/20" isBlurred>
+                className="h-fit w-[90vw] max-w-[500px] bg-black border-1 border-foreground-200 shadow-2xl shadow-foreground-500/20" isBlurred>
                     <CardHeader
-                        
+                        className="flex justify-between items-center"
                     >
                         <h1 className="text-2xl font-semibold">
                             Contact Me:
                         </h1>
+                        <div className="flex justify-center items-center gap-4">
+                        <Tooltip closeDelay={100} content="Go to the Github" className="text-foreground sticky">
+                                        <Button variant="faded"  className="!bg-white !border-0" as={Link} href="https://github.com/Tmmcmasters/" target="_blank" aria-label="Timothy's Github">
+                                            <Image
+                                                src={GithubLogo.src}
+                                                alt="Github Logo"
+                                                removeWrapper
+                                                isBlurred
+                                                className="w-9 h-9"
+                                            />
+                                        </Button>
+                                    </Tooltip>
+                                    <Tooltip closeDelay={100} content="Go to the LinkedIn" className="text-foreground sticky">
+                                        <Button  className="bg-transparent !border-0" as={Link} href="https://www.linkedin.com/in/timothy-mcmasters/" target="_blank"  aria-label="Timothy's LinkedIn">
+                                            <Image
+                                                src={LinkedInLogo.src}
+                                                alt="Linkedin Logo"
+                                                removeWrapper
+                                                isBlurred
+                                                className="w-11 h-9 rounded-none"
+                                            />
+                                        </Button>
+                                    </Tooltip>
+                        </div>
                     </CardHeader>
                     <CardBody className="flex flex-col justify-start items-center w-full gap-5">
                         <Input
