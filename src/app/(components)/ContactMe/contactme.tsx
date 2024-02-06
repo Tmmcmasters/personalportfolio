@@ -107,10 +107,10 @@ export default function ContactMe() {
     }
 
     return (
-        <div className="flex flex-col text-white px-10 my-24 gap-12">
-            <h1 className="text-5xl">Thank you for visiting!</h1>
-            <div className="flex flex-col justify-center items-center">
-                <Card className="h-fit w-[90vw] max-w-[500px] bg-black border-1  text-white" isBlurred>
+        <div className="flex flex-col text-foreground px-10 my-24 gap-12" data-theme="dark">
+            <h1 className="text-5xl h-20 self-center">Thank you for visiting!</h1>
+            <div className="flex flex-col justify-center items-center " >
+                <Card className="h-fit w-[90vw] max-w-[500px] bg-black border-1 border-foreground shadow-2xl shadow-foreground-500/50" isBlurred>
                     <CardHeader>
                         <h1 className="text-2xl font-semibold">
                             Contact Me:
