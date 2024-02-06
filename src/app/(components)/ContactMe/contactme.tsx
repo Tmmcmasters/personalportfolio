@@ -3,6 +3,7 @@
 import { Button, Card, CardBody, CardHeader, Input, Textarea } from "@nextui-org/react"
 import { useRef, useState } from "react"
 import { CreateContact } from "./contactmeserver"
+import toast from "react-hot-toast"
 
 
 export default function ContactMe() {
@@ -58,12 +59,12 @@ export default function ContactMe() {
 
         const result = CreateContact(formData)
         result.catch((error) => {
-
+            toast.error(error.message)
             setSubmitLoading(false)
             return
         })
-        result.then((data) => {
-            
+        result.then((data) => {     
+            toast.success("Successfully sent message! Thank you!")
             setSubmitLoading(false)
             return
         })
