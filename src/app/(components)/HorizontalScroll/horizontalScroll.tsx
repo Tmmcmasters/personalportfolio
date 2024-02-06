@@ -224,32 +224,37 @@ export default function HorizontalSection() {
 
                     <div className="flex flex-col justify-center items-center text-foreground ml-[20vw] w-[600px]">
                         <div className="flex justify-start items-start w-fit">
-                        <motion.h1
-                            ref={loadIn3}
-                            style={{
-                                transform: isInView3 ? "translateY(0)" : "translateY(30%)",
-                                opacity: isInView3 ? 1 : 0,
-                                transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s'
-                            }}
-                            className="text-5xl font-bold ">You can count on me...</motion.h1>
-                            </div>
-                            <div className="flex justify-end items-end  w-full">
-                        <motion.h1
-                            ref={loadIn4}
-                            style={{
-                                transform: isInView4 ? "translateY(0)" : "translateY(30%)",
-                                opacity: isInView4 ? 1 : 0,
-                                transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
-                            }}
-                            className="text-4xl font-bold ">to give it my all!</motion.h1>
-                            </div>
+                            <motion.h1
+                                ref={loadIn3}
+                                style={{
+                                    transform: isInView3 ? "translateY(0)" : "translateY(30%)",
+                                    opacity: isInView3 ? 1 : 0,
+                                    transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s'
+                                }}
+                                className="text-5xl font-bold ">You can <span className="underline">count on me</span>...</motion.h1>
+                        </div>
+                        <div className="flex justify-end items-end  w-full">
+                            <motion.h1
+                                ref={loadIn4}
+                                style={{
+                                    transform: isInView4 ? "translateY(0)" : "translateY(30%)",
+                                    opacity: isInView4 ? 1 : 0,
+                                    transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
+                                }}
+                                className="text-4xl font-bold ">to give it my all!</motion.h1>
+                        </div>
                     </div>
 
                     <div className="flex flex-col justify-center items-start text-foreground ml-[18vw] gap-5">
                         <div className="flex justify-center items-center gap-10 translate-x-16">
-                        <Card className="bg-green-400 bg-opacity-50 text-foreground w-64">
+                            <Card className="bg-green-400 bg-opacity-50 text-foreground w-64">
                                 <CardHeader>
                                     <h1>Rest APIs</h1>
+                                </CardHeader>
+                            </Card>
+                            <Card className="bg-red-400 bg-opacity-50 text-foreground w-64">
+                                <CardHeader>
+                                    <h1>MVC Architecture</h1>
                                 </CardHeader>
                             </Card>
                         </div>
@@ -306,14 +311,14 @@ export default function HorizontalSection() {
                             </Card>
                         </div>
                         <div className="flex justify-center items-center gap-10 translate-x-56">
-                        <Card className="bg-pink-400 bg-opacity-50 text-foreground w-64">
+                            <Card className="bg-pink-400 bg-opacity-50 text-foreground w-64">
                                 <CardHeader>
                                     <h1>Mobile First</h1>
                                 </CardHeader>
                             </Card>
-                        <Card className="bg-blue-400 bg-opacity-50 text-foreground w-64">
+                            <Card className="bg-blue-400 bg-opacity-50 text-foreground w-64">
                                 <CardHeader>
-                                    <h1>Object Oriented</h1>
+                                    <h1>Object Oriented Programming</h1>
                                 </CardHeader>
                             </Card>
                         </div>
