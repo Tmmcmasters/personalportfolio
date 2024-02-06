@@ -13,6 +13,31 @@ export default function ContactMe() {
     const [FirstNameInvalid, setFirstNameInvalid] = useState<boolean>(false)
     const [FirstNameErrorMessage, setFirstNameErrorMessage] = useState<string>("")
 
+    const [submitDisabled, setSubmitDisabled] = useState<boolean>(false)
+    
+    const [phoneNumberInput, setPhoneNumberInput] = useState<string>("")
+
+    const handleInput = (e: any) => {
+        const formattedPhoneNumber = formatPhoneNumber(e.target.value);
+        setPhoneNumberInput(formattedPhoneNumber);
+    }
+
+    function formatPhoneNumber(value: string) {
+
+        if (!value) {
+            return value;
+        }
+        const phoneNumber = value.replace(/[^\d]/g, "");
+        const phoneNumberLength = phoneNumber.length;
+        if (phoneNumberLength < 4) {
+            return phoneNumber;
+        }
+        if (phoneNumberLength < 7) {
+            return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+        }
+        return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
+    }
+
     interface formData {
         email: string
         firstName: string
@@ -63,9 +88,18 @@ export default function ContactMe() {
             setSubmitLoading(false)
             return
         })
-        result.then((data) => {     
-            toast.success("Successfully sent message! Thank you!")
+        result.then((data) => {
+            toast.success("Successfully sent message! \n Thank you! \n I will get back to you as soon as possible")
             setSubmitLoading(false)
+            // setFormData({
+            //     email: "",
+            //     firstName: "",
+            //     lastName: "",
+            //     company: "",
+            //     phoneNumber: "",
+            //     message: "",
+            // })
+            setSubmitDisabled(true)
             return
         })
 
@@ -90,11 +124,16 @@ export default function ContactMe() {
                         </div>
                         <div className="flex justify-between items-center gap-5 w-full">
                             <Input label="Company" type="text" variant="bordered" onValueChange={(e) => setFormData({ ...formData, company: e })} />
-                            <Input label="Phone Number" type="telephone" variant="bordered" onValueChange={(e) => setFormData({ ...formData, phoneNumber: e })} />
+                            <Input label="Phone Number"  type="text" variant="bordered" 
+                            onChange={(e) => {
+                                handleInput(e);
+                                setFormData({ ...formData, phoneNumber: phoneNumberInput });
+
+                            }}  value={phoneNumberInput}/>
                         </div>
                         <Textarea label="Message" type="text" variant="bordered" description="I do not share any of your information with anyone. For privacy reasons, I do not share my personal information on this site. Please feel to reach out to me through here or through other means like LinkedIn." onValueChange={(e) => setFormData({ ...formData, message: e })} />
                         <div className="w-full mt-5 ">
-                            <Button className="w-full" isLoading={SubmitLoading} variant="solid" size="lg" color="default" onClick={handleSubmit}>Submit</Button>
+                            <Button className="w-full" disabled={submitDisabled} isLoading={SubmitLoading} variant="solid" size="lg" color="default" onClick={handleSubmit}>Submit</Button>
                         </div>
                     </CardBody>
                 </Card>
