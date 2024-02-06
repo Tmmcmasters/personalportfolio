@@ -1,26 +1,31 @@
-import React from "react";
+"use client"
+
 import { Card, CardBody, CardFooter, CardHeader, Divider } from "@nextui-org/react";
+import ZoomParallax from "./(components)/ZoomParallax/zoomparallax";
+import Lenis from "@studio-freight/lenis/types";
+import HeroSection from "./(components)/heroSection";
+import HorizontalSection from "./(components)/HorizontalScroll/horizontalScroll";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import ColorParallax from "./(components)/ColorParallax/colorparallax";
+import ContactMe from "./(components)/ContactMe/contactme";
 
 export default function Home() {
-  return (
-    <div className="w-full h-full flex justify-center items-center">
-        
-    </div>
 
-    <div className=" flex justify-center items-center">
-    <Card>
-      <CardHeader>
-        <p className="text-large text-defualt-800 font-bold">Card Header</p>
-      </CardHeader>
-      <Divider />
-      <CardBody>
-        <p className="text-medium text-default-800">Card Body</p>
-      </CardBody>
-      <Divider />
-      <CardFooter>
-        <p className="text-small text-default-500">Card Footer</p>
-      </CardFooter>
-    </Card>
+  
+
+  return (
+    <div className=" flex flex-col justify-center items-center bg-background  overflow-x-clip " id="home">
+      <HeroSection />
+      <div className="w-full h-full">
+        <ZoomParallax />
+      </div>
+      <HorizontalSection />
+      <div className="w-full h-full">
+        <ColorParallax />
+      </div>
+      <div className="h-[100vh] w-full bg-black " id="contact">
+        <ContactMe />
+      </div>
     </div>
   );
 }
