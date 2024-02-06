@@ -81,13 +81,7 @@ export default function HorizontalSection() {
                                     </a>
                                 </div>
                                 <div className="h-full w-full flex flex-col justify-between items-center">
-                                    <p>- Developed and maintained full stack ASP.NET Core MVC web applications and their associated Web APIs.
-                                    </p>
-                                    <p>
-                                        - Participated in requirements gathering, prototyping, database design,  development, and testing.
-                                    </p>
-                                    <p>
-                                        - Utilized MS SQL Server for database management primarily through stored procedures.
+                                    <p className="text-foreground font-semibold text-[16px]">Starting as a Intern at STAR Bank May 2023, I spent the summer learning and working with C#, SQL Server, and Front End UIs. I have developed two internal web applications with a small team of 3 and, now,  I am currently working as an Associate Developer integrating our Core System with outside Vendors.
                                     </p>
                                 </div>
                             </CardBody>
@@ -177,8 +171,8 @@ export default function HorizontalSection() {
                                             </Tooltip>
                                         </a>
                                     </div>
-                                    <p>- A UI Library based off of Daisy UI for the Qwik Web Framework </p>
-                                    <p>- Currently in active development and potentially working with contributors of the Qwik Web Framework</p>
+                                    <p className="text-foreground font-semibold text-[16px]">After learning about the benefits of using Resumability in the Qwik Web Framework and how it can provide perfect LightHouse Scores, I wanted to contribute to the community by building an accessible UI Component Library built on top of Daisy UI. <span className="text-warning">This is in progress</span>
+                                    </p>
                                 </CardBody>
                                 <CardFooter className="flex flex-row justify-around items-center">
 
