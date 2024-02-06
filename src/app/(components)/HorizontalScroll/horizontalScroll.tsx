@@ -412,7 +412,7 @@ export default function HorizontalSection() {
                             >
 
                                 <Tooltip
-                                    showArrow className="max-w-[300px] text-foreground" closeDelay={100} content="While working at STAR Financial Bank, we regularly utilized SQL Database Queries to communicated with our Core Banking System and extract regular data for either STAR or our Vendors to utilize."
+                                    showArrow className="max-w-[300px] text-foreground" closeDelay={100} content="While working at STAR Financial Bank, we regularly utilized SQL Database Queries to communicate with our Core Banking System and extract regular data for either STAR or our Vendors to utilize."
                                 >
 
                                     <Card className="bg-green-400 bg-opacity-50 text-foreground w-64" isPressable>
