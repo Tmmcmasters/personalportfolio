@@ -246,10 +246,10 @@ export default function HorizontalSection() {
                     </div>
 
                     <div className="flex flex-col justify-center items-start text-foreground ml-[18vw] gap-5">
-                        <div className="flex justify-center items-center gap-10">
-                        <Card className="bg-violet-400 bg-opacity-50 text-foreground w-64">
+                        <div className="flex justify-center items-center gap-10 translate-x-16">
+                        <Card className="bg-green-400 bg-opacity-50 text-foreground w-64">
                                 <CardHeader>
-                                    <h1>Modern Animations</h1>
+                                    <h1>Rest APIs</h1>
                                 </CardHeader>
                             </Card>
                         </div>
@@ -302,6 +302,18 @@ export default function HorizontalSection() {
                             <Card className="bg-red-400 bg-opacity-50 text-foreground w-64">
                                 <CardHeader>
                                     <h1>Stored Procedures</h1>
+                                </CardHeader>
+                            </Card>
+                        </div>
+                        <div className="flex justify-center items-center gap-10 translate-x-56">
+                        <Card className="bg-pink-400 bg-opacity-50 text-foreground w-64">
+                                <CardHeader>
+                                    <h1>Mobile First</h1>
+                                </CardHeader>
+                            </Card>
+                        <Card className="bg-blue-400 bg-opacity-50 text-foreground w-64">
+                                <CardHeader>
+                                    <h1>Object Oriented</h1>
                                 </CardHeader>
                             </Card>
                         </div>
