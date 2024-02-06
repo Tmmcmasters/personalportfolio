@@ -147,7 +147,6 @@ export default function ZoomParallax() {
                                         alt={alt}
                                         width={width}
                                         height={height}
-                                        placeholder="blur"
                                         className="fill-foreground stroke-foreground "
                                         isBlurred
                                     />
