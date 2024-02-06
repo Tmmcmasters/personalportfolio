@@ -65,7 +65,7 @@ export default function HorizontalSection() {
     const transformX = useTransform(scrollYProgress, [0, 1], ["1%", "-90%"])
 
     return (
-        <div ref={container} className="w-full h-[500vh]  relative ">
+        <div ref={container} className="w-full h-[400vh]  relative ">
             <div className="sticky top-0 flex h-screen items-center overflow-hidden">
                 <motion.div
                     style={{ x: transformX }}
@@ -93,7 +93,7 @@ export default function HorizontalSection() {
                             <CardBody>
                                 <div className="w-90 h-44 brightness-110">
                                     <a href="https://www.starfinancial.com/" target="_blank">
-                                        <Tooltip content="Go to STAR Bank's Website" className="text-foreground">
+                                        <Tooltip closeDelay={100} content="Go to STAR Bank's Website" className="text-foreground">
 
                                             <Image
                                                 src={StarBankLogo.src}
@@ -172,7 +172,7 @@ export default function HorizontalSection() {
                             <Card className="w-[90vw]  max-w-md bg-secondary bg-opacity-10  text-foreground min-h-[60vh]">
                                 <CardHeader className="flex flex-row justify-between items-center ">
                                     <h1 className="text-3xl  bg-gradient-to-r from-purple-500   to-[#FE9A03]  text-transparent bg-clip-text font-bold drop-shadow-lg">qwikdaisy</h1>
-                                    <Tooltip content="Go to the Github" className="text-foreground sticky">
+                                    <Tooltip closeDelay={100} content="Go to the Github" className="text-foreground sticky">
                                         <Button isIconOnly className="!bg-white !border-0" as={Link} href="https://github.com/Tmmcmasters/DaisyQwik" target="_blank" aria-label="Github">
                                             <Image
                                                 src={GithubLogo.src}
@@ -187,7 +187,7 @@ export default function HorizontalSection() {
                                 <CardBody>
                                     <div className="w-90 ">
                                         <a href="https://qwikdaisy.netlify.app/" target="_blank">
-                                            <Tooltip content="Go to qwikdaisy's Home Page" className="text-foreground">
+                                            <Tooltip closeDelay={100} content="Go to qwikdaisy's Home Page" className="text-foreground">
                                                 <Image
                                                     src={QwikDaisyHomePage.src}
                                                     alt="Qwik Daisy Home Page"
