@@ -176,9 +176,21 @@ export default function ContactMe() {
                     <CardBody className="flex flex-col justify-start items-center w-full gap-5">
                         <Input
                         
-                        label="Email" variant="bordered" type="email" isRequired isInvalid={EmailInvalid} errorMessage={EmailErrorMessage} onValueChange={(e) => setFormData({ ...formData, email: e })} />
+                        label="Email" variant="bordered" type="email" isRequired isInvalid={EmailInvalid} errorMessage={EmailErrorMessage} onValueChange={(e) => {
+                            setFormData({ ...formData, email: e })
+                            if (e != "") {
+                                setEmailInvalid(false)
+                                setEmailErrorMessage("")
+                            }
+                        }} />
                         <div className="flex justify-between items-center gap-5 w-full">
-                            <Input label="First Name" type="text" variant="bordered" isRequired isInvalid={FirstNameInvalid} errorMessage={FirstNameErrorMessage} onValueChange={(e) => setFormData({ ...formData, firstName: e })} />
+                            <Input label="First Name" type="text" variant="bordered" isRequired isInvalid={FirstNameInvalid} errorMessage={FirstNameErrorMessage} onValueChange={(e) =>{
+                                setFormData({ ...formData, firstName: e })
+                                if (e != "") {
+                                    setFirstNameInvalid(false)
+                                    setFirstNameErrorMessage("")
+                                }
+                             }} />
                             <Input label="Last Name" type="text" variant="bordered" onValueChange={(e) => setFormData({ ...formData, lastName: e })} />
                         </div>
                         <div className="flex justify-between items-center gap-5 w-full">
@@ -192,7 +204,7 @@ export default function ContactMe() {
                         </div>
                         <Textarea label="Message" type="text" variant="bordered" description="I do not share any of your information with anyone. For privacy reasons, I do not share my personal information on this site. Please feel to reach out to me through here or through other means like LinkedIn." onValueChange={(e) => setFormData({ ...formData, message: e })} />
                         <div className="w-full mt-5 ">
-                            <Button className="w-full" disabled={submitDisabled} isLoading={SubmitLoading} variant="solid" size="lg" color="default" onClick={handleSubmit}>Submit</Button>
+                            <Button className="w-full" disabled={submitDisabled} isLoading={SubmitLoading} variant="solid" size="lg" color="default" onClick={handleSubmit}  onPressEnd={handleSubmit}>Submit</Button>
                         </div>
                     </CardBody>
                 </Card>
