@@ -7,7 +7,7 @@ import HeroSection from "./(components)/heroSection";
 import HorizontalSection from "./(components)/HorizontalScroll/horizontalScroll";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import ColorParallax from "./(components)/ColorParallax/colorparallax";
-import ContactMe from "./(components)/contactme";
+import ContactMe from "./(components)/ContactMe/contactme";
 
 export default function Home() {
 
