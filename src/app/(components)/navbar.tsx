@@ -11,6 +11,10 @@ export default function NavbarComponent() {
     {
       label: "Contact",
       href: "#contact",
+    }, 
+    {
+      label: "Home",
+      href: "#home",
     }
   ];
 
@@ -80,7 +84,7 @@ export default function NavbarComponent() {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarMenu>
+      <NavbarMenu className="bg-transparent ">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
