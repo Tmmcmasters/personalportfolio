@@ -19,7 +19,7 @@ export default function HeroSection() {
                     transform: isInView ? "translateX(0)" : "translateX(-30%)"
                 }
             }
-             className="text-5xl lg:text-9xl  font-bold text-foreground self-start transition-all duration-200">Hi,<br></br> I'm Timothy</motion.h1>
+             className="text-5xl lg:text-9xl  font-bold text-foreground self-start transition-all duration-200">Hi,<br></br> I&apos;m Timothy</motion.h1>
             <motion.p 
             ref={loadIn}
             style={
