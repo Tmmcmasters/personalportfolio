@@ -1,6 +1,6 @@
 'use client'
 
-import { Badge, Button, Card, CardBody, CardFooter, CardHeader, Image, Link, Tooltip } from "@nextui-org/react"
+import { Badge, Button, Card, CardBody, CardFooter, CardHeader, Image, Link, Popover, PopoverContent, PopoverTrigger, Tooltip } from "@nextui-org/react"
 import { motion, useAnimation, useInView, useScroll, useTransform } from "framer-motion"
 import StarBankLogo from '/public/star-financial-bank.svg'
 import CSharpLogo from '/public/csharp.svg'
@@ -34,6 +34,33 @@ export default function HorizontalSection() {
     const isInView3 = useInView(loadIn3, { once: false })
     const loadIn4 = useRef(null)
     const isInView4 = useInView(loadIn4, { once: false })
+
+    const RestAPIs = useRef(null)
+    const RestAPIinView = useInView(RestAPIs, { once: false })
+    const MVCArchitecture = useRef(null)
+    const MVCArchitectureInView = useInView(MVCArchitecture, { once: false })
+    const ModernAnimations = useRef(null)
+    const ModernAnimationsInView = useInView(ModernAnimations, { once: false })
+    const MicroserviceArchitecture = useRef(null)
+    const MicroserviceArchitectureInView = useInView(MicroserviceArchitecture, { once: false })
+    const RelationalDatabase = useRef(null)
+    const RelationalDatabaseInView = useInView(RelationalDatabase, { once: false })
+    const FrontEndDesing = useRef(null)
+    const FrontEndDesignInView = useInView(FrontEndDesing, { once: false })
+    const BackendWebAPIs = useRef(null)
+    const BackendWebAPIsInView = useInView(BackendWebAPIs, { once: false })
+    const SQLDatabaseQueries = useRef(null)
+    const SQLDatabaseQueriesInView = useInView(SQLDatabaseQueries, { once: false })
+    const ModernTrends = useRef(null)
+    const ModernTrendsInView = useInView(ModernTrends, { once: false })
+    const NugetArtifacts = useRef(null)
+    const NugetArtifactsInView = useInView(NugetArtifacts, { once: false })
+    const StoredProcedures = useRef(null)
+    const StoredProceduresInView = useInView(StoredProcedures, { once: false })
+    const MobileFirst = useRef(null)
+    const MobileFirstInView = useInView(MobileFirst, { once: false })
+    const ObjectOriented = useRef(null)
+    const ObjectOrientedInView = useInView(ObjectOriented, { once: false })
 
     const transformX = useTransform(scrollYProgress, [0, 1], ["1%", "-90%"])
 
@@ -241,80 +268,266 @@ export default function HorizontalSection() {
 
                     <div className="flex flex-col justify-center items-start text-foreground ml-[18vw] gap-5">
                         <div className="flex justify-center items-center gap-10 translate-x-16">
-                            <Card className="bg-green-400 bg-opacity-50 text-foreground w-64">
-                                <CardHeader>
-                                    <h1>Rest APIs</h1>
-                                </CardHeader>
-                            </Card>
-                            <Card className="bg-red-400 bg-opacity-50 text-foreground w-64">
-                                <CardHeader>
-                                    <h1>MVC Architecture</h1>
-                                </CardHeader>
-                            </Card>
+                            <motion.div ref={RestAPIs}
+                                style={{
+                                    transform: RestAPIinView ? "translateX(0)" : "translateX(-15%)",
+                                    opacity: RestAPIinView ? 1 : 0,
+                                    transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s'
+                                }}
+                            >
+                                <Tooltip
+                                    showArrow className="max-w-[300px]" closeDelay={100} content="I built and utilized Rest APIs throughout projects at STAR Financial Bank when communicating from UI to the Controllers, to the API, and to the Database.">
+
+                                    <Card className="bg-green-400 bg-opacity-50 text-foreground w-64" isPressable>
+                                        <CardHeader>
+                                            <h1>Rest APIs</h1>
+                                        </CardHeader>
+                                    </Card>
+                                </Tooltip>
+                            </motion.div>
+
+                                <motion.div
+                                    ref={MVCArchitecture}
+                                    style={{
+                                        transform: MVCArchitectureInView ? "translateX(0)" : "translateX(-15%)",
+                                        opacity: MVCArchitectureInView ? 1 : 0,
+                                        transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
+                                    }}
+                                >
+                            <Tooltip 
+                                showArrow className="max-w-[300px]" closeDelay={100} content="When working at STAR Financial Bank, I utilized MVC Architecture to build data driven user interfaces."
+                            >
+                                <Card ref={MVCArchitecture} className="bg-red-400 bg-opacity-50 text-foreground w-64" isPressable>
+                                    <CardHeader>
+                                        <h1>MVC Architecture</h1>
+                                    </CardHeader>
+                                </Card>
+                            </Tooltip>
+                                </motion.div>
                         </div>
                         <div className="flex justify-center items-center gap-10 -translate-x-14">
-                            <Card className="bg-violet-400 bg-opacity-50 text-foreground w-64">
+                            <motion.div
+                                ref={ModernAnimations}
+                                style={{
+                                    transform: ModernAnimationsInView ? "translateX(0)" : "translateX(15%)",
+                                    opacity: ModernAnimationsInView ? 1 : 0,
+                                    transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
+                                }}
+                            >
+
+                            <Tooltip
+                                showArrow className="max-w-[300px]" closeDelay={100} content="Utilizing Framer Motion, CSS Transitions, and Javascript; I have experience building modern UI animations like the ones you see on this page."
+                                >
+
+                            <Card className="bg-violet-400 bg-opacity-50 text-foreground w-64" isPressable>
                                 <CardHeader>
                                     <h1>Modern Animations</h1>
                                 </CardHeader>
                             </Card>
-                            <Card className="bg-pink-400 bg-opacity-50 text-foreground w-64">
+                            </Tooltip>
+                                </motion.div>
+
+
+<motion.div 
+    ref={MicroserviceArchitecture}
+    style={{
+        transform: MicroserviceArchitectureInView ? "translateX(0)" : "translateX(15%)",
+        opacity: MicroserviceArchitectureInView ? 1 : 0,
+        transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
+    }}
+>
+
+                            <Tooltip
+                                showArrow className="max-w-[300px]" closeDelay={100} content="While working at STAR Financial Bank, I utilized Microservices to build scalable and efficient systems for nightly operations and general business needs."
+                                >
+                            <Card className="bg-pink-400 bg-opacity-50 text-foreground w-64" isPressable>
                                 <CardHeader>
                                     <h1>Microservice Architecture</h1>
                                 </CardHeader>
                             </Card>
-                            <Card className="bg-yellow-400 bg-opacity-50 text-foreground w-64">
+                            </Tooltip>
+                                </motion.div>
+
+<motion.div 
+    ref={RelationalDatabase}
+    style={{
+        transform: RelationalDatabaseInView ? "translateX(0)" : "translateX(15%)",
+        opacity: RelationalDatabaseInView ? 1 : 0,
+        transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
+    }}
+>
+
+<Tooltip
+    showArrow className="max-w-[300px]" closeDelay={100} content="When designing and building new applications and systems at STAR Financial Bank, I utilized Entity Relational Diagrams to design and build the database ."
+>
+
+                            <Card className="bg-yellow-400 bg-opacity-50 text-foreground w-64" isPressable>
                                 <CardHeader>
                                     <h1>Relational Database Design</h1>
                                 </CardHeader>
                             </Card>
+</Tooltip>
+    </motion.div>
                         </div>
                         <div className="flex justify-center items-center gap-10">
-                            <Card className="bg-red-400 bg-opacity-50 text-foreground w-64">
+                        <Tooltip 
+    showArrow className="max-w-[300px]" closeDelay={100} content="HTML and CSS were my first two programming languages I learned more than two years ago. I have the knowledge and skills to design and build amazing Front Ends."
+>
+                            <Card className="bg-red-400 bg-opacity-50 text-foreground w-64" isPressable>
                                 <CardHeader>
                                     <h1>Front End Design</h1>
                                 </CardHeader>
                             </Card>
+    </Tooltip>
 
-                            <Card className="bg-blue-400 bg-opacity-50 text-foreground w-64">
+
+<motion.div
+    ref={FrontEndDesing}
+    style={{
+        transform: FrontEndDesignInView ? "translateX(0)" : "translateX(15%)",
+        opacity: FrontEndDesignInView ? 1 : 0,
+        transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
+    }}
+>
+
+<Tooltip 
+    showArrow className="max-w-[300px]" closeDelay={100} content="While working at STAR Financial Bank, we utilized .NET Web APIs to build and construct our microservice architecture."
+>
+
+                            <Card className="bg-blue-400 bg-opacity-50 text-foreground w-64" isPressable>
                                 <CardHeader>
                                     <h1>Backend Web APIs</h1>
                                 </CardHeader>
                             </Card>
-                            <Card className="bg-green-400 bg-opacity-50 text-foreground w-64">
+</Tooltip>
+    </motion.div>
+
+<motion.div
+    ref={SQLDatabaseQueries}
+    style={{
+        transform: SQLDatabaseQueriesInView ? "translateX(0)" : "translateX(15%)",
+        opacity: SQLDatabaseQueriesInView ? 1 : 0,
+        transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
+    }}
+>
+
+<Tooltip 
+    showArrow className="max-w-[300px]" closeDelay={100} content="While working at STAR Financial Bank, we regularly utilized SQL Database Queries to communicated with our Core Banking System and extract regular data for either STAR or our Vendors to utilize."
+>
+
+                            <Card className="bg-green-400 bg-opacity-50 text-foreground w-64" isPressable>
                                 <CardHeader>
                                     <h1>SQL Database Queries</h1>
                                 </CardHeader>
                             </Card>
+</Tooltip>
+    </motion.div>
                         </div>
                         <div className="flex justify-start items-center gap-10 translate-x-16">
-                            <Card className="bg-yellow-400 bg-opacity-50 text-foreground w-64">
+                            <motion.div
+                                ref={ModernTrends}
+                                style={{
+                                    transform: ModernTrendsInView ? "translateX(0)" : "translateX(15%)",
+                                    opacity: ModernTrendsInView ? 1 : 0,
+                                    transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
+                                }}
+                            >
+                            <Tooltip
+                                showArrow className="max-w-[300px]" closeDelay={100} content="As a part of my interst in the field of modern web development and front end, I have stayed up-to-date with the latest trends and technologies in web development like the Qwik Web framework."
+                                >
+                            <Card className="bg-yellow-400 bg-opacity-50 text-foreground w-64" isPressable>
                                 <CardHeader>
                                     <h1>Modern Trends</h1>
                                 </CardHeader>
                             </Card>
-                            <Card className="bg-purple-400 bg-opacity-50 text-foreground w-64">
+                            </Tooltip>
+                                </motion.div>
+
+<motion.div
+    ref={NugetArtifacts}
+    style={{
+        transform: NugetArtifactsInView ? "translateX(0)" : "translateX(15%)",
+        opacity: NugetArtifactsInView ? 1 : 0,
+        transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
+    }}
+>
+
+<Tooltip
+    showArrow className="max-w-[300px]" closeDelay={100} content="At STAR Financial Bank, we utilized Nuget Artifacts to build and maintain our connections between different systems and our web APIs"
+>
+
+                            <Card className="bg-purple-400 bg-opacity-50 text-foreground w-64" isPressable>
                                 <CardHeader>
                                     <h1>Nuget Artifacts (SDKs)</h1>
                                 </CardHeader>
                             </Card>
-                            <Card className="bg-red-400 bg-opacity-50 text-foreground w-64">
+</Tooltip>
+    </motion.div>
+
+<motion.div
+    ref={StoredProcedures}
+    style={{
+        transform: StoredProceduresInView ? "translateX(0)" : "translateX(15%)",
+        opacity: StoredProceduresInView ? 1 : 0,
+        transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
+    }}
+>
+
+<Tooltip
+    showArrow className="max-w-[300px]" closeDelay={100} content="At STAR Financial Bank, we would utilize MS SQL Stored Procedures to execute our queries when performing database operations."
+>
+
+                            <Card className="bg-red-400 bg-opacity-50 text-foreground w-64" isPressable>
                                 <CardHeader>
                                     <h1>Stored Procedures</h1>
                                 </CardHeader>
                             </Card>
+</Tooltip>
+    </motion.div>
                         </div>
                         <div className="flex justify-center items-center gap-10 translate-x-56">
-                            <Card className="bg-pink-400 bg-opacity-50 text-foreground w-64">
+                            <motion.div
+                                ref={MobileFirst}
+                                style={{
+                                    transform: MobileFirstInView ? "translateX(0)" : "translateX(15%)",
+                                    opacity: MobileFirstInView ? 1 : 0,
+                                    transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
+                                }}
+                            >
+
+                            <Tooltip
+                                showArrow className="max-w-[300px]" closeDelay={100} content="As a part of my interest in web development, I have studied the different ways to build flexible and mobile first web layouts like the ones you see on this website."
+                                >
+
+                            <Card className="bg-pink-400 bg-opacity-50 text-foreground w-64" isPressable>
                                 <CardHeader>
                                     <h1>Mobile First</h1>
                                 </CardHeader>
                             </Card>
-                            <Card className="bg-blue-400 bg-opacity-50 text-foreground w-64">
+                            </Tooltip>
+                                </motion.div>
+
+<motion.div
+    ref={ObjectOriented}
+    style={{
+        transform: ObjectOrientedInView ? "translateX(0)" : "translateX(15%)",
+        opacity: ObjectOrientedInView ? 1 : 0,
+        transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
+    }}
+>
+
+<Tooltip
+    showArrow className="max-w-[300px]" closeDelay={100} content="I have experience utilizing C# and ASP.NET Core to build object oriented web applications that I used while working at STAR Financial Bank."
+>
+
+                            <Card className="bg-blue-400 bg-opacity-50 text-foreground w-64" isPressable>
                                 <CardHeader>
                                     <h1>Object Oriented Programming</h1>
                                 </CardHeader>
                             </Card>
+</Tooltip>
+    </motion.div>
+
                         </div>
                     </div>
 
